@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+
+/* 尾部 */
+.index-footer{
+  display: flex;
+  align-items: center;
+  height: 49px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+}
+.index-footer a{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  color: #797d82;
+}
+.index-footer img{
+  width: 21px;
+  height: 21px;
+  margin-bottom: 5px;
+}
+.index-footer .active{
+  color: #ff5f16;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  /* overflow-x: hidden; */
+}
