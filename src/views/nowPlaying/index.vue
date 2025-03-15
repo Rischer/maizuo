@@ -16,10 +16,9 @@
 
 <script>
 import { getNowPlayingFilmList } from '@/api/filmApi'
-import items from './ui/items.vue'
 export default {
   components: {
-    items
+    items: () => import('./ui/items.vue')
   },
   data() {
     return {

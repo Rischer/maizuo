@@ -11,11 +11,10 @@
 </template>
 
 <script>
-import items from './ui/items.vue'
 import { getComingSoonFilmList } from '@/api/filmApi'
 export default {
   components: {
-    items
+    items: () => import('./ui/items.vue')
   },
   data() {
     return {

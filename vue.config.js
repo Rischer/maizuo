@@ -2,6 +2,7 @@
 // 修改此处文件后一定要重启当前项目
 
 const { defineConfig } = require('@vue/cli-service')
+const CompressionPlugin = require('compression-webpack-plugin')
 
 // 定义一个promise的延时器
 const delay = (ms = 300) => {
@@ -12,7 +13,23 @@ const delay = (ms = 300) => {
 
 module.exports = defineConfig({
   transpileDependencies: true,
+  publicPath: process.env.NODE_ENV === 'production' ? '/maizuo/' : '/', // 替换为你的仓库名称
   // 对开发时服务器进行增量配置
+  configureWebpack: {
+    plugins: [
+      new CompressionPlugin({
+        algorithm: 'gzip',
+        test: /\.(js|css)$/,
+        threshold: 10240,
+        minRatio: 0.8
+      })
+    ],
+    optimization: {
+      splitChunks: {
+        chunks: 'all'
+      }
+    }
+  },
   devServer: {
     // 中间件，利用此中间件，完成mock数据生成
     setupMiddlewares: (middlewares, { app }) => {

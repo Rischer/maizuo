@@ -30,12 +30,10 @@
 </template>
 
 <script>
-import hotCity from './ui/hotCity.vue'
-import topNav from './ui/topNav.vue'
 export default {
   components: {
-    topNav,
-    hotCity
+    topNav: () => import('./ui/topNav.vue'),
+    hotCity: () => import('./ui/hotCity.vue')
   },
   data() {
     return {

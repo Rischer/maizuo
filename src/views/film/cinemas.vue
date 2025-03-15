@@ -31,13 +31,12 @@
 </template>
 
 <script>
-import topCinemaNav from './ui/topCinemaNav.vue'
 import { getRangeDay } from '@/utils/tools'
 import { getFilmIdToCinemas } from '@/api/filmApi'
 export default {
   props: ['id'],
   components: {
-    topCinemaNav
+    topCinemaNav: () => import('./ui/topCinemaNav.vue')
   },
   data() {
     return {

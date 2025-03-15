@@ -12,13 +12,11 @@
 </template>
 
 <script>
-import topNav from './ui/topNav.vue'
-import cinemasList from './ui/cinemasList.vue'
 import { getCinemaList } from '@/api/cinemaApi'
 export default {
   components: {
-    topNav,
-    cinemasList
+    topNav: () => import('./ui/topNav.vue'),
+    cinemasList: () => import('./ui/cinemasList.vue')
   },
   data() {
     return {
